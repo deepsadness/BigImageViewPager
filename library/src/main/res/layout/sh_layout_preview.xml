@@ -42,6 +42,7 @@
         android:layout_height="30dp"
         android:background="@drawable/gray_square_circle_bg_white_stroke"
         android:gravity="center"
+        android:layout_marginBottom="30dp"
         android:paddingBottom="5dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
