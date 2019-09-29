@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
@@ -32,6 +33,7 @@ import com.zhihu.matisse.Matisse;
 import com.zhihu.matisse.MimeType;
 import com.zhihu.matisse.internal.entity.CaptureStrategy;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -73,6 +75,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        final String name = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).getName();
+//        String kuaizhi = new File( ).getName();
+
+//        Log.d("kuaizhi",kuaizhi);
         SwitchCompat switchClickClose = findViewById(R.id.switchClickClose);
         SwitchCompat switchDragClose = findViewById(R.id.switchDragClose);
         SwitchCompat switchUpDragClose = findViewById(R.id.switchUpDragClose);
@@ -285,7 +291,7 @@ public class MainActivity extends AppCompatActivity {
 
                         // 保存的文件夹名称，会在SD卡根目录进行文件夹的新建。
                         // (你也可设置嵌套模式，比如："BigImageView/Download"，会在SD卡根目录新建BigImageView文件夹，并在BigImageView文件夹中新建Download文件夹)
-                        .setFolderName("BigImageView/Download")
+                        .setFolderName(name+"/kuaizhi")
 
                         // 缩放动画时长，单位ms
                         .setZoomTransitionDuration(300)
